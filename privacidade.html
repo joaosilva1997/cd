@@ -8,7 +8,7 @@
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
       if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
-        links[i].setAttribute("href", href);
+        links[i].setAttribute("href", href.split("?sck=")[0].split("&sck=")[0]);
       } else {
         var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
         var sckValue = new URLSearchParams(window.location.search).get("sck");
@@ -17,6 +17,7 @@
     }
   });
 </script>
+
 
 	  
     <meta charset="utf-8">
