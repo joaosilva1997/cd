@@ -53,23 +53,22 @@
     </script>
 	 
 <script>
-  // Obtém todas as tags "a" em sua página
-  var links = document.getElementsByTagName("a");
+  document.addEventListener("DOMContentLoaded", function() {
+    var url_ = location.href;
+    var params = url_.substring(url_.indexOf("?"));
 
-  // Loop através de todas as tags "a"
-  for (var i = 0; i < links.length; i++) {
-    var href = links[i].getAttribute("href");
-    if (href.indexOf("?sck") == -1 && href.indexOf("&sck") == -1) {
-      // Se a URL do link não tiver o parâmetro "?sck" nem "&sck", adiciona o parâmetro
-      if (href.indexOf("?") > -1) {
-        links[i].setAttribute("href", href + "&sck");
-      } else {
-        links[i].setAttribute("href", href + "?sck");
+    if (~params.indexOf("?sck") || ~params.indexOf("&sck")) {
+      var as = document.querySelectorAll("a");
+      for (var x = 0; x < as.length; x++) {
+        if (~as[x].href.indexOf("?")) {
+          as[x].href = as[x].href + "&sck";
+        } else {
+          as[x].href = as[x].href + "?sck";
+        }
       }
     }
-  }
+  });
 </script>
-
 	  
   </head>
   <body>
