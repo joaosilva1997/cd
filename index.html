@@ -53,21 +53,19 @@
     </script>
 	 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var url_ = location.href;
-    var params = url_.substring(url_.indexOf("?"));
-
-    if (~params.indexOf("?sck") || ~params.indexOf("&sck")) {
-      var as = document.querySelectorAll("a");
-      for (var x = 0; x < as.length; x++) {
-        if (~as[x].href.indexOf("?")) {
-          as[x].href = as[x].href + "&sck";
-        } else {
-          as[x].href = as[x].href + "?sck";
+    document.addEventListener("DOMContentLoaded", function() {
+        var links = document.querySelectorAll("a");
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].getAttribute("href");
+            if (!href.includes("?sck") && !href.includes("&sck")) {
+                if (href.includes("?")) {
+                    links[i].setAttribute("href", href + "&sck");
+                } else {
+                    links[i].setAttribute("href", href + "?sck");
+                }
+            }
         }
-      }
-    }
-  });
+    });
 </script>
 	  
   </head>
