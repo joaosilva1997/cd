@@ -57,8 +57,12 @@
     var links = document.getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
-      var sckParam = href.indexOf("?") > -1 ? "&sck" : "?sck";
-      links[i].setAttribute("href", href + sckParam);
+      var url = new URL(href, window.location.href);
+      var searchParams = new URLSearchParams(url.search);
+      if (searchParams.has("sck")) {
+        var sckParam = searchParams.has("?sck") ? "&sck" : "?sck";
+        links[i].setAttribute("href", href + sckParam);
+      }
     }
   });
 </script>
