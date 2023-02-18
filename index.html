@@ -59,9 +59,10 @@
       var href = links[i].getAttribute("href");
       var url = new URL(href, window.location.href);
       var searchParams = new URLSearchParams(url.search);
-      if (searchParams.has("sck")) {
+      var sckValue = searchParams.get("sck");
+      if (sckValue !== null) {
         var sckParam = searchParams.has("?sck") ? "&sck" : "?sck";
-        links[i].setAttribute("href", href + sckParam);
+        links[i].setAttribute("href", href + sckParam + "=" + sckValue);
       }
     }
   });
