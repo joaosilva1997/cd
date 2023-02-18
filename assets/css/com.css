@@ -17,18 +17,22 @@
   }
 }
 
-/* Estilos padrão para a imagem do header */
-.img-head {
-  max-width: 100%;
-}
-
-/* Estilos para dispositivos com largura de tela menor ou igual a 767 pixels */
-@media (max-width: 767px) {
-  .img-head {
-    display: block;
-    margin: 0 auto 15px auto;
+  /* Estilos padrão para a imagem */
+   .img-head {
+    max-width: 100%;
+    max-width: 1000px;
+    height: auto;
   }
-}
+
+  /* Estilos para dispositivos com largura de tela menor ou igual a 767 pixels */
+  @media (max-width: 767px) {
+    .img-head {
+      display: block;
+      margin: 0 auto 10px auto;
+      max-width: 100%;
+      height: auto;
+    }
+  }
 
 
 * {
