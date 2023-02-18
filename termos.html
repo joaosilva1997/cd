@@ -43,7 +43,7 @@
     if(~params.indexOf("?sck")){
     var as = document.querySelectorAll("a");
     for(var x=0; x<as.length; x++){
-    as[x].href = as[x].href+params.replace("?","&");
+    as[x].href = as[x].href+params;
     }
     }
     });
