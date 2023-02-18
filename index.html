@@ -57,12 +57,12 @@
     var links = document.getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
-      var url = new URL(href, window.location.href);
-      var searchParams = new URLSearchParams(url.search);
-      var sckValue = searchParams.get("sck");
-      if (sckValue !== null) {
-        var sckParam = searchParams.has("?sck") ? "&sck" : "?sck";
-        links[i].setAttribute("href", href + sckParam + "=" + sckValue);
+      if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
+        links[i].setAttribute("href", href);
+      } else {
+        var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
+        var sckValue = new URLSearchParams(window.location.search).get("sck");
+        links[i].setAttribute("href", href + sckParam + sckValue);
       }
     }
   });
