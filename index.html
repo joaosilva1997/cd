@@ -61,10 +61,9 @@
       var searchParams = new URLSearchParams(url.search);
       var sckValue = searchParams.get("sck");
       if (sckValue === null) {
-        // O parâmetro "?sck" ou "&sck" não está presente na URL do link, então adiciona ele com o valor existente (se houver)
-        sckValue = getParamValue(url.search, "sck");
-        var sckParam = url.search ? "&sck=" : "?sck=";
-        links[i].setAttribute("href", href + sckParam + sckValue);
+        // O parâmetro "?sck" ou "&sck" não está presente na URL do link, então adiciona ele
+        var sckParam = url.search ? "&sck" : "?sck";
+        links[i].setAttribute("href", href + sckParam);
       } else {
         // O parâmetro "?sck" ou "&sck" já está presente na URL do link, então preserva o valor existente desse parâmetro
         var sckParam = searchParams.has("sck") ? "&sck=" : "?sck=";
@@ -72,13 +71,6 @@
       }
     }
   });
-
-  // Função para obter o valor do parâmetro de consulta existente
-  function getParamValue(queryString, paramName) {
-    var regex = new RegExp("(^|&)" + paramName + "=([^&]*)(&|$)", "i");
-    var match = regex.exec(queryString);
-    return match ? match[2] : "";
-  }
 </script>
 	  
   </head>
