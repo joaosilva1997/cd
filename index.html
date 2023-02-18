@@ -57,18 +57,8 @@
     var links = document.getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
-      var url = new URL(href, window.location.href);
-      var searchParams = new URLSearchParams(url.search);
-      var sckValue = searchParams.get("sck");
-      if (sckValue === null) {
-        // O parâmetro "?sck" ou "&sck" não está presente na URL do link, então adiciona ele
-        var sckParam = url.search ? "&sck" : "?sck";
-        links[i].setAttribute("href", href + sckParam);
-      } else {
-        // O parâmetro "?sck" ou "&sck" já está presente na URL do link, então preserva o valor existente desse parâmetro
-        var sckParam = searchParams.has("sck") ? "&sck=" : "?sck=";
-        links[i].setAttribute("href", href.replace(/(\?|&)(sck=[^&]*)/, sckParam + sckValue));
-      }
+      var sckParam = href.indexOf("?") > -1 ? "&sck" : "?sck";
+      links[i].setAttribute("href", href + sckParam);
     }
   });
 </script>
