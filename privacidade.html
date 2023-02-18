@@ -3,67 +3,16 @@
   <head>
 	  
 <script>
-  // Verifica se a URL atual contém o parâmetro de consulta "?sck" ou "&sck"
-  function hasSckParam() {
-    return window.location.search.includes("?sck") || window.location.search.includes("&sck");
-  }
-
-  // Adiciona ou remove o parâmetro de consulta "?sck" ou "&sck" da URL
-  function updateSckParam(addParam) {
-    var currentUrl = window.location.href;
-    if (hasSckParam()) {
-      // Se o parâmetro de consulta já estiver presente, remove-o da URL
-      currentUrl = currentUrl.replace(/[\?&]sck=[^&#]*/g, "");
-    }
-    if (addParam) {
-      // Adiciona o parâmetro de consulta "?sck" ou "&sck" à URL
-      if (currentUrl.indexOf("?") > -1) {
-        currentUrl += "&sck=testeeeee";
-      } else {
-        currentUrl += "?sck=testeeeee";
-      }
-    }
-    // Atualiza a URL na barra de endereço do navegador
-    window.history.replaceState(null, null, currentUrl);
-  }
-
   document.addEventListener("DOMContentLoaded", function() {
-    if (hasSckParam()) {
-      // Se o parâmetro de consulta já estiver presente, atualiza os links na página
-      var links = document.querySelectorAll("a");
-      for (var i = 0; i < links.length; i++) {
-        var href = links[i].getAttribute("href");
-        if (!href.includes("?sck") && !href.includes("&sck")) {
-          if (href.includes("?")) {
-            links[i].setAttribute("href", href + "&sck=testeeeee");
-          } else {
-            links[i].setAttribute("href", href + "?sck=testeeeee");
-          }
-        }
+    var links = document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute("href");
+      if (href.indexOf("?") > -1) {
+        links[i].setAttribute("href", href + "&sck=");
+      } else {
+        links[i].setAttribute("href", href + "?sck=");
       }
     }
-
-    // Adiciona ou remove o parâmetro de consulta "?sck" ou "&sck" da URL quando o usuário navegar pelo site
-    updateSckParam(false);
-    window.addEventListener("popstate", function(event) {
-      updateSckParam(hasSckParam());
-    });
-    document.addEventListener("click", function(event) {
-      var target = event.target;
-      while (target && target.tagName !== "A") {
-        target = target.parentNode;
-      }
-      if (target) {
-        var href = target.getAttribute("href");
-        if (href && !href.startsWith("#")) {
-          event.preventDefault();
-          updateSckParam(true);
-          setTimeout(function() {
-            window.location.href = href;
-          }, 10);
-        }
-      }
-    });
   });
 </script>
 
