@@ -7,20 +7,15 @@
     var links = document.getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
-      if (href.indexOf("?sck=") === -1 && href.indexOf("&sck=") === -1) {
-        var sckParam = href.indexOf("?") > -1 ? "&" : "?";
-        var existingParams = href.indexOf("?") > -1 ? href.substr(href.indexOf("?")+1) : "";
-        links[i].setAttribute("href", href + sckParam + "sck=" + getParamValue(existingParams, "sck"));
+      if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
+        links[i].setAttribute("href", href);
+      } else {
+        var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
+        var sckValue = new URLSearchParams(window.location.search).get("sck");
+        links[i].setAttribute("href", href + sckParam + sckValue);
       }
     }
   });
-
-  // Função para obter o valor do parâmetro de consulta existente
-  function getParamValue(queryString, paramName) {
-    var regex = new RegExp("(^|&)" + paramName + "=([^&]*)(&|$)", "i");
-    var match = regex.exec(queryString);
-    return match ? match[2] : "";
-  }
 </script>
 
 	  
