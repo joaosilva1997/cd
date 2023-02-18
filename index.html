@@ -53,25 +53,21 @@
     </script>
 	 
 <script>
-	document.addEventListener("DOMContentLoaded", function(){
-		var url_ = location.href;
-		var pos = url_.search(/[?&]sck/);
-		
-		if (pos >= 0) {
-			var prefix = url_[pos] === '?' ? '' : '&';
-			var as = document.querySelectorAll("a");
-			for (var i=0; i<as.length; i++) {
-				var href = as[i].href;
-				var j = href.search(/[?&]sck/);
-				if (j >= 0) {
-					var params = href.substring(j);
-					as[i].href = href.substring(0, j) + params.replace(/^[?&]/, prefix);
-				} else {
-					as[i].href = href + prefix + 'sck';
-				}
-			}
-		}
-	});
+  // Obtém todas as tags "a" em sua página
+  var links = document.getElementsByTagName("a");
+
+  // Loop através de todas as tags "a"
+  for (var i = 0; i < links.length; i++) {
+    var href = links[i].getAttribute("href");
+    if (href.indexOf("?sck") == -1 && href.indexOf("&sck") == -1) {
+      // Se a URL do link não tiver o parâmetro "?sck" nem "&sck", adiciona o parâmetro
+      if (href.indexOf("?") > -1) {
+        links[i].setAttribute("href", href + "&sck");
+      } else {
+        links[i].setAttribute("href", href + "?sck");
+      }
+    }
+  }
 </script>
 
 	  
