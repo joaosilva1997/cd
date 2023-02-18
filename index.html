@@ -57,10 +57,18 @@
     var links = document.getElementsByTagName("a");
     for (var i = 0; i < links.length; i++) {
       var href = links[i].getAttribute("href");
-      if (href.indexOf("?sck=") === -1 && href.indexOf("&sck=") === -1) {
-        var sckParam = href.indexOf("?") > -1 ? "&" : "?";
-        var existingParams = href.indexOf("?") > -1 ? href.substr(href.indexOf("?")+1) : "";
-        links[i].setAttribute("href", href + sckParam + "sck=" + getParamValue(existingParams, "sck"));
+      var url = new URL(href, window.location.href);
+      var searchParams = new URLSearchParams(url.search);
+      var sckValue = searchParams.get("sck");
+      if (sckValue === null) {
+        // O parâmetro "?sck" ou "&sck" não está presente na URL do link, então adiciona ele com o valor existente (se houver)
+        sckValue = getParamValue(url.search, "sck");
+        var sckParam = url.search ? "&sck=" : "?sck=";
+        links[i].setAttribute("href", href + sckParam + sckValue);
+      } else {
+        // O parâmetro "?sck" ou "&sck" já está presente na URL do link, então preserva o valor existente desse parâmetro
+        var sckParam = searchParams.has("sck") ? "&sck=" : "?sck=";
+        links[i].setAttribute("href", href.replace(/(\?|&)(sck=[^&]*)/, sckParam + sckValue));
       }
     }
   });
@@ -72,7 +80,6 @@
     return match ? match[2] : "";
   }
 </script>
-
 	  
   </head>
   <body>
