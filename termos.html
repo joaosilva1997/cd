@@ -7,7 +7,7 @@
 	var url_ = location.href;
 	var params = url_.substring(url_.indexOf("?"));
 
-	if(~params.indexOf("?sck")){
+	if(~params.indexOf("&sck")){
 	var as = document.querySelectorAll("a");
 	for(var x=0; x<as.length; x++){
 	as[x].href = as[x].href+params.replace("?","&");
