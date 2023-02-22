@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/com.css">
+
+    <!-- Título da Página -->
+    <title>Atención, mira el mensaje de Juan.</title>
+    
+    <style type="text/css">
+      header {
+        color: white;
+        /*background-image: url("assets/img/bg.jpeg");*/
+        background-color: #0e244b;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-blend-mode: darken;
+      }
+      .banner{
+        background-color: #F52E18;
+      }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>$.get("https://ipinfo.io/json", function (response) { $("#ip").html("IP: " + response.ip); $("#address").html(response.city); $("#details").html(JSON.stringify(response, null, 4)); }, "jsonp");
+    </script>
+    
+  </head>
+  <body>
+    
+    <div class="banner py-lg-2 py-sm-1 center">
+    <center><span style="font-size:16px;color: #FFFFFF"><b><u>ATENCIÓN</u>: ¡VOLVER O SALIR DE ESTA PÁGINA PUEDE CAUSAR ERRORES EN SU COMPRA!</span></b></center>
+    </div>
+    
+    <header class="py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            
+            <!-- Imagem  -->
+            <img class="img-fluid" src="./assets/img/etapas.png" style="margin-top:-55px;margin-bottom: -80px">
+
+            <!-- Headline 1-->
+            <h3 class="my-4" style="font-size: 25px; font-family: sans serif;color: #FFFFFF"><b>⚠️ SU ORDEN AÚN NO ESTÁ COMPLETA...</b></h3>
+
+            <!-- Headline 2-->
+            <h3 class="my-4" style="font-size: 28px;color: #FFFFFF"><b>Felicitaciones, bienvenido al <b>"Chat Dólar".</b> <font color="F52E18">Antes de acceder al programa, </font> tengo que decirte algo MUY IMPORTANTE...<br></b></h3>
+            
+            <!-- VSL -->
+            <div id="vid_62e1fd9d919107000f3a5ef2" style="position:relative;width:100%;padding: 56.33270321361059% 0 0;"><img id="thumb_62e1fd9d919107000f3a5ef2" src="https://images.converteai.net/60ab1fa6-578e-480b-87e8-9a54de116ac5/players/62e1fd9d919107000f3a5ef2/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_62e1fd9d919107000f3a5ef2" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_62e1fd9d919107000f3a5ef2">var s=document.createElement("script");s.src="https://scripts.converteai.net/60ab1fa6-578e-480b-87e8-9a54de116ac5/players/62e1fd9d919107000f3a5ef2/player.js",s.async=!0,document.head.appendChild(s);</script>
+            <br>
+            
+            <!-- Botão 1 -->
+            <div id="cta1" class="d-none" style="text-align:center">
+          
+            
+          </div>
+        </div>
+      </div>
+    </header>
+		<style>.esconder { display: none }</style>
+		<script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function() {
+            /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+            var SECONDS_TO_DISPLAY = 865;
+            var CLASS_TO_DISPLAY = ".esconder";
+
+            /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+            var attempts = 0;
+            var elsHiddenList = [];
+            var elsDisplayed = false;
+            var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+            var alreadyDisplayedKey =`alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
+            var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+            setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+
+            var showHiddenElements = function () {
+            elsDisplayed = true;
+            elsHiddenList.forEach((e) => e.style.display = "block");
+            localStorage.setItem(alreadyDisplayedKey, true)
+            }
+
+            var startWatchVideoProgress = function () {
+            if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+            if (attempts >= 10) return;
+            attempts += 1;
+            return setTimeout(function () { startWatchVideoProgress() }, 1000);
+            }
+
+            smartplayer.instances[0].on('timeupdate', () => {
+            if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+            if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+            showHiddenElements();
+            })
+            }
+
+            if (alreadyElsDisplayed === 'true') {
+            setTimeout(function () { showHiddenElements(); }, 100);
+            } else {
+            startWatchVideoProgress()
+            }
+            });
+	</script>
+  
+
+  </body>
+</html>
