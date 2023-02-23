@@ -137,6 +137,23 @@
 
 	gtag('config', 'UA-219954357-1');
 	</script>
+	  
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+	var links = document.getElementsByTagName("a");
+	for (var i = 0; i < links.length; i++) {
+	var href = links[i].getAttribute("href");
+	if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
+	links[i].setAttribute("href", href.split("?sck=")[0].split("&sck=")[0]);
+	} else {
+	var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
+	var sckValue = new URLSearchParams(window.location.search).get("sck");
+	links[i].setAttribute("href", href + sckParam + sckValue);
+	}
+	}
+	});
+	</script>
+	  
 </head>
   <body>
   <div class="banner py-lg-2 py-sm-1 center">
