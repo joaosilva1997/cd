@@ -76,6 +76,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>$.get("https://ipinfo.io/json", function (response) { $("#ip").html("IP: " + response.ip); $("#address").html(response.city); $("#details").html(JSON.stringify(response, null, 4)); }, "jsonp");
     </script>
+	  	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-219954357-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-219954357-1');
+	</script>
     
   </head>
   <body>
