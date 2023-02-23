@@ -74,6 +74,19 @@
   });
 </script>
 
+<script>
+  setTimeout(function() {
+    var back_redirect_back_link = 'https://chatdolar.com/bk1';
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+    window.onpopstate = function () {
+      setTimeout(function () {
+        location.href = back_redirect_back_link;
+      }, 1);
+    };
+  }, 800*1000);
+</script>
+
 	  
 </head>
   <body>
