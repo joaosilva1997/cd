@@ -27,6 +27,39 @@
       .banner{
         background-color: #F52E18;
       }
+	    #progress-bar {
+        width: 400px;
+        height: 20px;
+        border: 1px solid white;
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px black;
+        background-color: white;
+        margin: 0 auto; /* centraliza a div no meio da página */
+      }
+
+      #progress {
+        height: 100%;
+        width: 0;
+        background-color: green;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px black;
+        transition: width 2s;
+      }
+
+      #text {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: Helvetica, Arial, sans-serif;
+        color: white;
+        line-height: 1; /* adicionado o line-height */
+        text-shadow: 1px 1px black;
+		margin-bottom: 5px;
+      }
+	  
     </style>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -46,8 +79,25 @@
           <div class="col-lg-8 text-center">
             
             <!-- Imagem  -->
-            <img class="img-fluid" src="./assets/img/etapas.png" style="margin-top:-55px;margin-bottom: -80px">
+            
+			<div id="text">Paso 1 de 2</div>
+			<div id="progress-bar">
+			<div id="progress"></div>
+			</div>
 
+			<script>
+			var progressBar = document.getElementById("progress");
+			var percent = 0;
+			var intervalId = setInterval(function() {
+			percent += 1;
+			progressBar.style.width = percent + "%";
+			progressBar.innerHTML = percent + "%";
+			if (percent >= 50) {
+			clearInterval(intervalId);
+			}
+			}, 20);
+			</script>
+			
             <!-- Headline 1-->
             <h3 class="my-4" style="font-size: 25px; font-family: sans serif;color: #FFFFFF"><b>⚠️ SU ORDEN AÚN NO ESTÁ COMPLETA...</b></h3>
 
