@@ -14,85 +14,89 @@
     <!-- Título da Página -->
     <title>Atención, mira el mensaje de Juan.</title>
     
-    <style type="text/css">
-      header {
-        color: white;
-        background-color: #0e244b;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        background-blend-mode: darken;
-      }
-      .banner{
-        background-color: #F52E18;
-      }
-	  
-	  body {
-		background-color: #0e244b;
-	  }
-	    #progress-bar {
-        width: 400px;
-        height: 20px;
-        border: 1px solid white;
-        border-radius: 10px;
-        box-shadow: 1px 1px 3px black;
-        background-color: white;
-        margin: 0 auto; /* centraliza a div no meio da página */
-      }
+	<style type="text/css">
+	header {
+	color: white;
+	background-color: #0e244b;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-blend-mode: darken;
+	}
+	.banner{
+	background-color: #F52E18;
+	}
 
-      #progress {
-        height: 100%;
-        width: 0;
-        background-color: green;
-        border-radius: 10px;
-        text-align: center;
-        color: white;
-        font-weight: bold;
-        text-shadow: 1px 1px black;
-        transition: width 2s;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-      }
+	body {
+	background-color: #0e244b;
+	}
+	#progress-bar {
+	width: 400px;
+	height: 20px;
+	border: 1px solid white;
+	border-radius: 10px;
+	box-shadow: 1px 1px 3px black;
+	background-color: white;
+	margin: 0 auto; /* centraliza a div no meio da página */
+	}
 
-      #text {
-	    font-size: 20px;
-        text-align: center;
-        text-transform: uppercase;
-		margin-bottom: 5px;
-        font-weight: bold;
-        font-family: Helvetica, Arial, sans-serif;
-        color: white;
-        line-height: 1; /* adicionado o line-height */
-        text-shadow: 1px 1px black;
-      }
-	  
-		footer {
-		background-color: #0e244b;
-		color: white;
-		text-align: center;
-		padding: 150px;
-		bottom: 0;
-		width: 100%;
-		}
-		
-		
-		#box_hotmart {
-		  position: relative;
-		  bottom: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  display: none;
-		  transition: opacity 0.5s ease-in-out;
-		}
+	#progress {
+	height: 100%;
+	width: 0;
+	background-color: green;
+	border-radius: 10px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	text-shadow: 1px 1px black;
+	transition: width 2s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	}
 
-		#box_hotmart.show {
-		  display: flex;
-		  justify-content: center;
-		  align-items: center;
-		  opacity: 1;
-		}
+	#text {
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	color: white;
+	line-height: 1; /* adicionado o line-height */
+	text-shadow: 1px 1px black;
+	}
+
+	footer {
+	background-color: #0e244b;
+	font-size: 10px;
+	white-space: nowrap;
+	color: white;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	padding: 150px;
+	bottom: 0;
+	width: 100%;
+	}
+
+
+	#box_hotmart {
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	transition: opacity 0.5s ease-in-out;
+	}
+
+	#box_hotmart.show {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	}
 		
     </style>
     
