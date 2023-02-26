@@ -170,11 +170,20 @@
               </a>
               <img class="img-fluid" src="./assets/img/compra-segura.webp" style="width:300px">
 			  			  
-				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-				<a href="https://wa.me/+5511946501083?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20Chat%20D%C3%B3lar..." style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;
-				z-index:1000;" target="_blank">
-				<i style="margin-top:16px" class="fa fa-whatsapp"></i>
-				</a>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<a href="#" onclick="openWhatsApp()" target="_blank" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;z-index:1000;">
+  <i style="margin-top:16px" class="fa fa-whatsapp"></i>
+</a>
+
+<script>
+function openWhatsApp() {
+  var phone = '5511946501083'; // número de telefone
+  var message = 'Hola, quiero saber más sobre Chat Dólar...'; // mensagem a ser enviada
+  var url = 'whatsapp://send?phone=' + phone + '&text=' + encodeURIComponent(message);
+  window.open(url, '_blank');
+}
+</script>
 						  
               </div>
             </div> 
