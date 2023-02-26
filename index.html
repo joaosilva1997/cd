@@ -109,7 +109,7 @@
             document.addEventListener("DOMContentLoaded", function() {
             /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
             var SECONDS_TO_DISPLAY = 865;
-            var CLASS_TO_DISPLAY = ".escnder";
+            var CLASS_TO_DISPLAY = ".esconder";
 
             /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
             var attempts = 0;
@@ -169,24 +169,27 @@
                 <span class="span-btn2">(Atención: Últimas plazas disponibles)</span>
               </a>
               <img class="img-fluid" src="./assets/img/compra-segura.webp" style="width:300px">	
-	    <!-- wpp botão -->
-			<a href="#" onclick="openWhatsApp()" target="_blank" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;z-index:1000;animation: pulsate 1.2s ease-in-out infinite;">
-			<i style="margin-top:16px" class="fa fa-whatsapp"></i>
-			</a>
-			<script>
-			function openWhatsApp() {
-			var phone = '5511946501083'; // número de telefone
-			var message = 'Hola, quiero saber más sobre Chat Dólar...'; // mensagem a ser enviada
+		    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			var url = 'whatsapp://send?phone=' + phone + '&text=' + encodeURIComponent(message);
-			window.open(url, '_blank');
-			} else {
-			var url = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(message);
-			window.open(url, '_blank');
-			}
-			}
-			</script>
+<a href="#" onclick="openWhatsApp()" target="_blank" style="position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888;z-index:1000;animation: pulsate 1.2s ease-in-out infinite;">
+  <i style="margin-top:16px" class="fa fa-whatsapp"></i>
+</a>
+
+<script>
+function openWhatsApp() {
+  var phone = '5511946501083'; // número de telefone
+  var message = 'Hola, quiero saber más sobre Chat Dólar...'; // mensagem a ser enviada
+
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    var url = 'whatsapp://send?phone=' + phone + '&text=' + encodeURIComponent(message);
+    window.open(url, '_blank');
+  } else {
+    var url = 'https://api.whatsapp.com/send?phone=' + phone + '&text=' + encodeURIComponent(message);
+    window.open(url, '_blank');
+  }
+}
+</script>
 
 		<style>
 		@keyframes pulsate {
