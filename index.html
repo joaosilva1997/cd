@@ -57,22 +57,6 @@
 
 	$.get("https://ipinfo.io/json", function (response) { $("#ip").html("IP: " + response.ip); $("#address").html(result); $("#details").html(JSON.stringify(response, null, 4)); }, "jsonp");
 	</script>
-	 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var links = document.getElementsByTagName("a");
-    for (var i = 0; i < links.length; i++) {
-      var href = links[i].getAttribute("href");
-      if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
-        links[i].setAttribute("href", href.split("?sck=")[0].split("&sck=")[0]);
-      } else {
-        var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
-        var sckValue = new URLSearchParams(window.location.search).get("sck");
-        links[i].setAttribute("href", href + sckParam + sckValue);
-      }
-    }
-  });
-</script>
 
 <script>
   setTimeout(function() {
@@ -195,7 +179,21 @@
     <footer class="bg-dark py-3 text-center">
       <div class="text-white"><a href="termos.html" class="text-white">Términos de Uso</a> | <a href="privacidade.html" class="text-white">Privacidad</a></div>
     </footer>
-
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var links = document.getElementsByTagName("a");
+    for (var i = 0; i < links.length; i++) {
+      var href = links[i].getAttribute("href");
+      if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
+        links[i].setAttribute("href", href.split("?sck=")[0].split("&sck=")[0]);
+      } else {
+        var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
+        var sckValue = new URLSearchParams(window.location.search).get("sck");
+        links[i].setAttribute("href", href + sckParam + sckValue);
+      }
+    }
+  });
+</script>
 
   </body>
 </html>
