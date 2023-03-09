@@ -1,25 +1,223 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Atención</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/com.css">
+    <title>Atención, mira el mensaje de Juan.</title>
     <style>
-      /* Define el estilo para centrar el texto e mudar o fundo e a cor da letra*/
-      body {
-        background-color: black;
-        color: white;
-      }
-      
-      .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-    </style>
-  </head>
+body {
+background-color: #0e244b;
+font-family: Helvetica, Arial, sans-serif;
+}
+#container {
+max-width: 800px;
+margin: 0 auto;
+padding: 30px;
+text-align: center;
+color: white;
+}
+
+footer {
+background-color: #0e244b;
+font-size: 10px;
+white-space: nowrap;
+color: white;
+text-align: center;
+display: flex;
+justify-content: center;
+padding: 150px;
+bottom: 0;
+width: 100%;
+}
+
+h1 {
+font-size: 40px;
+font-weight: bold;
+margin-bottom: 20px;
+color: yellow;
+}
+
+h2 {
+font-size: 30px;
+margin-bottom: 20px;
+}
+
+p {
+font-size: 20px;
+margin-bottom: 20px;
+}
+
+#button {
+background-color: green;
+color: white;
+font-size: 24px;
+font-weight: bold;
+padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+#disclaimer {
+font-size: 16px;
+margin-top: 40px;
+}
+
+header {
+color: white;
+background-color: #0e244b;
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+background-blend-mode: darken;
+}
+.banner{
+background-color: #F52E18;
+}
+
+body {
+background-color: #0e244b;
+}
+   
+#progress-bar {
+width: 100%;
+height: 20px;
+border: 1px solid white;
+border-radius: 10px;
+box-shadow: 1px 1px 3px black;
+background-color: white;
+margin-right: 0 auto;
+}
+   
+    body, html { overflow-x:hidden; }
+
+#progress {
+height: 100%;
+width: 0;
+background-color: green;
+border-radius: 10px;
+text-align: center;
+color: white;
+font-weight: bold;
+text-shadow: 1px 1px black;
+transition: width 2s;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#text {
+font-size: 20px;
+text-align: center;
+text-transform: uppercase;
+margin-bottom: 5px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+color: white;
+line-height: 1; /* adicionado o line-height */
+text-shadow: 1px 1px black;
+}
+ 
+ 
+ 
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-219954357-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-219954357-1');
+</script>
+ 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+var links = document.getElementsByTagName("a");
+for (var i = 0; i < links.length; i++) {
+var href = links[i].getAttribute("href");
+if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
+links[i].setAttribute("href", href.split("?sck=")[0].split("&sck=")[0]);
+} else {
+var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
+var sckValue = new URLSearchParams(window.location.search).get("sck");
+links[i].setAttribute("href", href + sckParam + sckValue);
+}
+}
+});
+</script>
+ 
+</head>
   <body>
-    <div class="center">
-      <h1>Tu país no tiene permiso para ver esto.</h1>
+  <div class="banner py-lg-2 py-sm-1 center">
+    <center><span style="font-size:16px;color: #FFFFFF"><b><u>ATENCIÓN</u>: ¡VOLVER O SALIR DE ESTA PÁGINA PUEDE CAUSAR ERRORES EN SU COMPRA!</span></b></center>
     </div>
+   
+    <header class="py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+           
+            <!-- Imagem  -->
+           
+<div id="text">Paso 1 de 3</div>
+<div id="progress-bar">
+<div id="progress"></div>
+</div>
+
+<script>
+var progressBar = document.getElementById("progress");
+var percent = 0;
+var intervalId = setInterval(function() {
+percent += 1;
+progressBar.style.width = percent + "%";
+progressBar.innerHTML = percent + "%";
+if (percent >= 45) {
+clearInterval(intervalId);
+}
+}, 10);
+</script>
+
+    <div id="container">
+<h1>Última oportunidad - Dólar2up</h1>
+<h2>¡Oferta única, no la pierda!</h2>
+<p>Realmente queremos que obtenga resultados <span style="color: #00FF00; font-weight: bold;">aún más rápidos</span>, así que entre nosotros, justo aquí en esta página, me verás haciendo algo que no suelo hacer…</p>
+<p>He decidido reducir el precio de Dólar2up de <span style="color: #00FF00; font-weight: bold; font-size: 24px;">$27 a $17</span> exclusivamente para ti...</p>
+<p>¡¡¡Así es, obtendrás Dólar2up con un <u>40% de descuento</u>!!!</p>
+<p>Eso es menos de 56 centavos de dólar al día, para que finalmente tengas una vida de prosperidad y abundancia, teniendo resultados 2x más rápidos y potenciando aún más los resultados de Chat Dólar, deshaciéndose de una vez por todas de las limitaciones que recurrentemente atraviesa en su vida por falta de dinero.</p>
+<p>No despedicie esta <span style="color: #00FF00; font-weight: bold;">OPORTUNIDAD</span>...</p>
+<p><strong>SU DINERO ESTÁ PROTEGIDO DE LA MISMA FORMA.</strong></p>
+<img src="./assets/img/garantia.webp" alt="garantia" style="max-width: 100%; height: auto;">
+<p>No hay nada peor que pagar por algo que no funciona. Aunque confío en los resultados transformadores del programa, quiero proteger su inversión. Puede solicitar reembolso si no ve resultados satisfactorios. Le devolveré todo su dinero sin ninguna pregunta.</p>
+<p>Rechaza esta oferta y corre el riesgo de perder de $60 a $100 dólares al día... o acepta esta oferta y garantiza obtener más ganancias y cambiar su vida en la mitad del tiempo.</p>
+<p>No te pierdas esta oportunidad única.</p>
+<p>Haga clic en el <span style="color: #00FF00; font-weight: bold; font-size: 24px;">botón verde</span> a continuación, ¡haga la elección correcta!</p>
+    </div>
+
+<!-- HOTMART - Upsell Widget -->
+<div id="box_hotmart"></div>
+<script src="https://pay.hotmart.com/assets/js/hotmart.upsell_checkout.js"></script>
+
+<script>
+opts = {
+key: 'USL-93331-273022-578c06b894b7aca37ac9814223c94346',
+width: '650' ,
+height: '420'
+};
+Upsell.Widget.show(opts);
+</script>
+<!-- HOTMART - Upsell Widget [end] -->
+
+<footer>
+Chat Dólar ©2023 Todos los derechos reservados.
+</footer>
+
   </body>
 </html>
