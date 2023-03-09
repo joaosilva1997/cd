@@ -1,25 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <title>Atención</title>
-    <style>
-      /* Define el estilo para centrar el texto e mudar o fundo e a cor da letra*/
-      body {
-        background-color: black;
-        color: white;
-      }
-      
-      .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/com.css">
+
+    <!-- Título da Página -->
+    <title>Atención, mira el mensaje de Juan.</title>
+   
+<style type="text/css">
+header {
+color: white;
+background-color: #0e244b;
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+background-blend-mode: darken;
+}
+.banner{
+background-color: #F52E18;
+}
+
+body {
+background-color: #0e244b;
+}
+
+#progress-bar {
+width: 100%;
+height: 20px;
+border: 1px solid white;
+border-radius: 10px;
+box-shadow: 1px 1px 3px black;
+background-color: white;
+margin-right: 0 auto;
+}
+
+body, html { overflow-x:hidden; }
+
+#progress {
+height: 100%;
+width: 0;
+background-color: green;
+border-radius: 10px;
+text-align: center;
+color: white;
+font-weight: bold;
+text-shadow: 1px 1px black;
+transition: width 2s;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#text {
+font-size: 20px;
+text-align: center;
+text-transform: uppercase;
+margin-bottom: 5px;
+font-weight: bold;
+font-family: Helvetica, Arial, sans-serif;
+color: white;
+line-height: 1; /* adicionado o line-height */
+text-shadow: 1px 1px black;
+}
+
+footer {
+background-color: #0e244b;
+font-size: 10px;
+white-space: nowrap;
+color: white;
+text-align: center;
+display: flex;
+justify-content: center;
+padding: 150px;
+bottom: 0;
+width: 100%;
+}
+
+
+#box_hotmart {
+position: relative;
+margin-top: 20px;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: none;
+transition: opacity 0.5s ease-in-out;
+}
+
+#box_hotmart.show {
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+#box_hotmart {
+width: 100%;
+height: 300px;
+}
+}
+
     </style>
+   
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-219954357-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-219954357-1');
+</script>
+ 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+var links = document.getElementsByTagName("a");
+for (var i = 0; i < links.length; i++) {
+var href = links[i].getAttribute("href");
+if (href.indexOf("?sck=") > -1 || href.indexOf("&sck=") > -1) {
+links[i].setAttribute("href", href.split("?sck=")[0].split("&sck=")[0]);
+} else {
+var sckParam = href.indexOf("?") > -1 ? "&sck=" : "?sck=";
+var sckValue = new URLSearchParams(window.location.search).get("sck");
+links[i].setAttribute("href", href + sckParam + sckValue);
+}
+}
+});
+</script>
+
   </head>
   <body>
-    <div class="center">
-      <h1>Tu país no tiene permiso para ver esto.</h1>
+   
+    <div class="banner py-lg-2 py-sm-1 center">
+    <center><span style="font-size:16px;color: #FFFFFF"><b><u>ATENCIÓN</u>: ¡VOLVER O SALIR DE ESTA PÁGINA PUEDE CAUSAR ERRORES EN SU COMPRA!</span></b></center>
     </div>
+   
+    <header class="py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+           
+            <!-- Imagem  -->
+           
+<div id="text">Paso 1 de 3</div>
+<div id="progress-bar">
+<div id="progress"></div>
+</div>
+
+<script>
+var progressBar = document.getElementById("progress");
+var percent = 0;
+var intervalId = setInterval(function() {
+percent += 1;
+progressBar.style.width = percent + "%";
+progressBar.innerHTML = percent + "%";
+if (percent >= 33) {
+clearInterval(intervalId);
+}
+}, 20);
+</script>
+
+            <!-- Headline 1-->
+            <h3 class="my-4" style="font-size: 25px; font-family: Helvetica, sans-serif;color: yellow"><b>⚠️ SU ORDEN AÚN NO ESTÁ COMPLETA...</b></h3>
+
+            <!-- Headline 2-->
+            <h3 class="my-4" style="font-size: 28px;color: #FFFFFF"><b>Felicitaciones, bienvenido al <b>"Chat Dólar".</b> <font color="F52E18">Antes de acceder al programa, </font> tengo que decirte algo MUY IMPORTANTE...<br></b></h3>
+           
+            <!-- VSL -->
+            <div id="vid_63f6c761194dfe000c298a77" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_63f6c761194dfe000c298a77" src="https://images.converteai.net/5c6de595-f74c-4b8f-a2aa-5752255c20e8/players/63f6c761194dfe000c298a77/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_63f6c761194dfe000c298a77" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_63f6c761194dfe000c298a77">var s=document.createElement("script");s.src="https://scripts.converteai.net/5c6de595-f74c-4b8f-a2aa-5752255c20e8/players/63f6c761194dfe000c298a77/player.js",s.async=!0,document.head.appendChild(s);</script>
+           
+            <!-- Botão 1 -->
+            <div id="cta1" class="d-none" style="text-align:center">
+         
+           
+          </div>
+        </div>
+      </div>
+    </header>
+
+<!-- HOTMART - Upsell Widget -->
+<div id="box_hotmart"></div>
+<script src="https://pay.hotmart.com/assets/js/hotmart.upsell_checkout.js"></script>
+
+<script>
+opts = {
+key: 'USL-93331-273020-6ef30bd174de6261852ed151af4f765c',
+width: '650' ,
+height: '420'
+};
+Upsell.Widget.show(opts);
+</script>
+<!-- HOTMART - Upsell Widget [end] -->
+
+
+<script>
+var boxHotmart = document.getElementById("box_hotmart");
+
+setTimeout(function() {
+boxHotmart.classList.add("show");
+<!-- ADICIONAR AQUI O DELAY DO UPSELL -->
+}, 201 * 1000);
+</script>
+
+<footer>
+Chat Dólar ©2023 Todos los derechos reservados.
+</footer>
+
   </body>
 </html>
